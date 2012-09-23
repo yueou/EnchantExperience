@@ -1,0 +1,19 @@
+name: EnchantExperience
+main: com.yueou.EnchantExperience.EnchantExperience
+version: 1.0
+author: yueou
+description: >
+             Experience of enchant for SkillEnchant and SkillRepair
+commands:
+  enchantlv:
+    description:
+    permission:  
+    usage: /enchantlv help
+permissions:
+    enchantlv.*:
+        description: 
+        children:
+            mi.admin: true
+    enchantlv.admin:
+        description: 
+        default: op

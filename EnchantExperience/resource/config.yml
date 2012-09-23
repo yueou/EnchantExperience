@@ -1,0 +1,23 @@
+SQLconfig:
+    useSQL: false
+    Host: localhost
+    DataBase: EnchantExperience
+    UserName: root
+    Password: root
+    Port: 3306
+    Prefix: EE_
+options:
+    EnchantSkillName: Enchant
+    RepairSkillName: Repair
+    maxEnchantExp: 5000
+    maxEnchantLevel: 50
+experiences:
+    dirt: 1
+    sand: 1
+    stone: 1
+    coalore: 2
+    ironore: 3
+    redstone: 3
+    goldore: 5
+    lapisore: 5
+    diamondore: 10

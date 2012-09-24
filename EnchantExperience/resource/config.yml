@@ -7,14 +7,16 @@ SQLconfig:
     Port: 3306
     Prefix: EE_
 options:
-    EnchantSkillName: Enchant
-    RepairSkillName: Repair
-    maxEnchantExp: 5000
+    EnchantSkillName: 工具强化
+    RepairSkillName: 修理能力
+    maxEnchantExp: 20000
     maxEnchantLevel: 50
 experiences:
     dirt: 1
     sand: 1
     stone: 1
+    wood: 2
+    clay: 2
     coalore: 2
     ironore: 3
     redstone: 3

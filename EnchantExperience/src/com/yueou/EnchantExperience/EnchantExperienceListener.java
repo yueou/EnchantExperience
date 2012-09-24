@@ -19,6 +19,8 @@ public class EnchantExperienceListener implements Listener{
 	private int dirtexp;
 	private int sandexp;
 	private int stoneexp;
+	private int woodexp;
+	private int clayexp;
 	private int coalexp;
 	private int redstoneexp;
 	private int ironexp;
@@ -31,6 +33,8 @@ public class EnchantExperienceListener implements Listener{
 		dirtexp = plugin.getConfig().getInt("experiences.dirt",1);
 		sandexp = plugin.getConfig().getInt("experiences.sand",1);
 		stoneexp = plugin.getConfig().getInt("experiences.stone",1);
+		woodexp = plugin.getConfig().getInt("experiences.wood",1);
+		clayexp = plugin.getConfig().getInt("experiences.clay",1);
 		coalexp = plugin.getConfig().getInt("experiences.coalore",2);
 		redstoneexp = plugin.getConfig().getInt("experiences.redstone",3);
 		ironexp = plugin.getConfig().getInt("experiences.ironore",3);
@@ -84,7 +88,7 @@ public class EnchantExperienceListener implements Listener{
 		*/
 		Block block = bpe.getBlock();
 		Material type = block.getType();
-		if(type==Material.COAL_ORE||type==Material.IRON_ORE||type==Material.DIAMOND_ORE||type==Material.LAPIS_ORE||type==Material.GOLD_ORE||type==Material.REDSTONE_ORE){
+		if(type==Material.CLAY||type==Material.COAL_ORE||type==Material.IRON_ORE||type==Material.DIAMOND_ORE||type==Material.LAPIS_ORE||type==Material.GOLD_ORE||type==Material.REDSTONE_ORE){
 			plugin.getMap().addBlock(block);
 		}
 		
@@ -128,6 +132,12 @@ public class EnchantExperienceListener implements Listener{
 		}
 		else if(block.getType()==Material.SAND){
 			enchanter.gainExp(sandexp);
+		}
+		else if(block.getType()==Material.LOG){
+			enchanter.gainExp(woodexp);
+		}		
+		else if(block.getType()==Material.CLAY){
+			enchanter.gainExp(clayexp);
 		}
 		else if(block.getType()==Material.COAL_ORE){
 			enchanter.gainExp(coalexp);

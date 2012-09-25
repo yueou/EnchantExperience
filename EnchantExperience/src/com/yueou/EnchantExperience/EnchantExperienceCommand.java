@@ -30,7 +30,7 @@ public class EnchantExperienceCommand implements CommandExecutor{
         if(args.length == 0 ){
         	Enchanter enchanter = plugin.getEnchanter(player);
         	if((!enchanter.canEnchant())&&(!enchanter.canRepair())){
-        		player.sendMessage(ChatColor.RED+ "你的职业没有附魔技能，无法查看附魔经验");
+        		player.sendMessage(ChatColor.RED+ "你还没有附魔技能，无法查看附魔经验");
         		return true;
         	}
         	

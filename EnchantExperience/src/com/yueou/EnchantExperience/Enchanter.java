@@ -66,7 +66,7 @@ public class Enchanter {
 		int costexp = (k*level*level)/2;
 		exp = exp - costexp;
 		player.sendMessage(ChatColor.GREEN + "消耗了 " + costexp +" 点附魔经验, 附魔等级变为 " + getEnchantLevel() + " 级!");
-		plugin.save();
+		plugin.save(this);
 	}
 	
 	public void setEnchantLevel(int level){

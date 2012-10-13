@@ -54,15 +54,9 @@ public class EnchantExperienceListener implements Listener{
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)	
 	public void onPlayerLogin(PlayerLoginEvent ple){
 		Player player = ple.getPlayer();
-		int exp = plugin.getSaveFile().getInt(player.getName(), 0);
-		if(exp==0){
-			plugin.getSaveFile().set(player.getName(), 0);
-			
-		}
+		plugin.loadEnchanter(player);
 		
-		plugin.loadEnchanter(player, exp);
-		
-		plugin.save();
+		//plugin.saveAll();
 		
 	}
 	
@@ -71,10 +65,10 @@ public class EnchantExperienceListener implements Listener{
 		Player player = pqe.getPlayer();
 		String playername = player.getName();
 		
-		plugin.getSaveFile().set(playername, plugin.getEnchanter(player).getExp());
-		
+		//plugin.getSaveFile().set(playername, plugin.getEnchanter(player).getExp());
+
+		plugin.save(plugin.getEnchanter(player));
 		plugin.removeEnchanter(player);
-		plugin.save();
 	}
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)	
 	public void onBlockPlace(BlockPlaceEvent bpe){
@@ -161,7 +155,7 @@ public class EnchantExperienceListener implements Listener{
 		
 		if(newlevel!=oldlevel){
 			player.sendMessage("附魔等级提升到了 " + ChatColor.GREEN + newlevel + ChatColor.WHITE +" 级!");
-			plugin.save();
+			plugin.saveAll();
 		}
 	}
 

@@ -1,6 +1,9 @@
 package com.yueou.EnchantExperience;
 
+import java.awt.List;
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -58,10 +61,17 @@ public class EnchantExperienceHash {
 		
 		enchantermap.clear();
 	}
+	public Object[] toEntryArray(){
+		return enchantermap.entrySet().toArray();
+	}
 	
 	public Enchanter getEnchanter(Player player){
 		
 		return enchantermap.get(player.getName().toLowerCase());
 	}
-
+	
+	public Enchanter getEnchanter(String playername){
+		
+		return enchantermap.get(playername.toLowerCase());
+	}
 }
